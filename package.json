@@ -1,0 +1,8 @@
+{
+  "name": "Esc-bot",
+  "version": "3.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Escgroup/Esc-bot.git",
+  "author": "[Esc]™Group(mouse)",
+  "license": "MIT"
+}
