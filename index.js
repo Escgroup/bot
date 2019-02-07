@@ -12,9 +12,7 @@ const config = require("./config.js");
 client.login(config.token);
 
 client.registry
-    .registerGroups([
-        ["bot", "通常のbotコマンド"],
-    ])
+    .registerGroups([["bot", "通常のbotコマンド"]])
     .registerCommandsIn(`${__dirname}/commands/`);
 
 client.on("ready", () => {
@@ -22,4 +20,6 @@ client.on("ready", () => {
     client.user.setActivity("Commandoテスト中");
 });
 
-client.on("error", console.error);
+client.on("error", error =>
+    client.channels.get("542909982358634496").send(error)
+);
