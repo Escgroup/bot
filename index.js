@@ -20,6 +20,16 @@ client.on("ready", () => {
     client.user.setActivity("Commandoテスト中");
 });
 
-client.on("error", error =>
-    client.channels.get("542909982358634496").send(error)
-);
+//loging
+client.on("error", error => {
+    client.channels.get("542909982358634496").send(error);
+});
+client.on("warn", warn => {
+    client.channels.get("543039202418229248").send(warn);
+});
+client.on("debug", debug => {
+    client.channels.get("543027707089387522").send(debug);
+});
+client.on("disconnect", event => {
+    client.channels.get("543040492569624577").send(event.code);
+});
