@@ -5,11 +5,11 @@
   "repository": "https://github.com/Escgroup/Esc-bot.git",
   "author": "[Esc]™Group(mouse)",
   "license": "MIT",
-  "devDependencies": {
-    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
-  },
   "dependencies": {
     "discord.js": "^11.4.2",
-    "discord.js-commando": "^0.10.0"
+    "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
+  },
+  "devDependencies": {
+    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
   }
 }
