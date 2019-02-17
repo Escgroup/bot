@@ -1,5 +1,11 @@
 const { Command } = require("discord.js-commando");
 
+const disambiguation = items => {
+    const item_list = items.map(item => `\`${item["name"]}\``).join(",");
+    return `いくつかのコマンドが見つかりました、詳しく入力してください。
+(もしかして : ${item_list})`;
+};
+
 module.exports = class HelpCommand extends Command {
     constructor(client) {
         super(client, {
@@ -78,8 +84,9 @@ module.exports = class HelpCommand extends Command {
                             .send(help)
                             .then(() => {
                                 edit_message.edit(
-                                    ":envelope_with_arrow:" +
-                                        "| コマンド一覧を DM に送信しました"
+                                    `:envelope_with_arrow: | ${
+                                        commands[0].name
+                                    }コマンドのヘルプを DM に送信しました`
                                 );
                             })
                             .catch(() => {
@@ -90,6 +97,19 @@ module.exports = class HelpCommand extends Command {
                                 );
                             })
                     );
+                return;
+            } else if (commands.length > 15) {
+                return message.say(
+                    "たくさんのコマンドが見つかりました、詳しく入力してください"
+                );
+            } else if (commands.length > 1) {
+                return message.say(disambiguation(commands));
+            } else {
+                return message.say(
+                    `コマンドが見つかりませんでした。\`${
+                        this.client.commandPrefix
+                    }help\`と入力して確認してください`
+                );
             }
         }
     }
