@@ -78,6 +78,20 @@ module.exports = class HelpCommand extends Command {
                         value: commands[0].examples.join("\n"),
                     });
 
+                // prettier-ignore
+                help.embed.fields.push({
+                    name: "権限",
+                    value: `${
+                        commands[0].isUsable(message)
+                            ? "利用できます"
+                            : `利用できません ${
+                                message.guild
+                                    ? "(権限が不足しています)"
+                                    : "(サーバーで試してください)"
+                            }`
+                    }`,
+                });
+
                 message
                     .say(
                         `<a:loading:482420749668188170> | ${
@@ -151,8 +165,10 @@ module.exports = class HelpCommand extends Command {
                     `,
                     fields: [],
                     footer: {
-                        icon_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Info_Simple.svg/800px-Info_Simple.svg.png",
-                        text: "質問、意見、問題報告 等は main server の ℹ Information カテゴリで受付ています。",
+                        icon_url:
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Info_Simple.svg/800px-Info_Simple.svg.png",
+                        text:
+                            "質問、意見、問題報告 等は main server の ℹ Information カテゴリで受付ています。",
                     },
                     color: 0xf5a623,
                 },
@@ -179,6 +195,7 @@ module.exports = class HelpCommand extends Command {
                 help_list.embed.fields.push({
                     name: `**${group.id}** (${group.name})`,
                     value: list_cmd || "まだありません",
+                    inline:true,
                 });
             });
 
