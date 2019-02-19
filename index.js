@@ -30,12 +30,13 @@ client.on("ready", () => {
     bot_on = true;
 });
 
-/* ログ */
-//message
 client.on("message", message => {
     if (message.author.bot) return;
-    message_log(client, message);
+    message_log(client, message, config);
 });
+
+/* ログ */
+
 // botの問題系
 client.on("error", async error => {
     if (bot_on === false) return;

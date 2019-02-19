@@ -1,4 +1,4 @@
-module.exports = (client, message) => {
+module.exports = (client, message,config) => {
     const log_message = message.cleanContent;
 
     /*global webhook_option*/
@@ -41,7 +41,7 @@ module.exports = (client, message) => {
     }
 
     client.channels
-        .get("542909938058526721")
+        .get(config.channel_id.message_id)
         .fetchWebhooks()
         .then(hooks => {
             hooks.first().send(log_message, webhook_option);
