@@ -1,15 +1,15 @@
 const { CommandoClient } = require("discord.js-commando");
 
-const message_log = require("./client/message/log.js");
+const config = require("./config/main.js");
 
 const client = new CommandoClient({
-    commandPrefix: ",,",
-    owner: "348385393160355840",
-    invite: "https://discord.gg/dBcfbxP",
+    commandPrefix: config.prefix,
+    owner: config.owner.id,
+    invite: config.guild.main.url,
     unknownCommandResponse: false,
 });
 
-const config = require("./config.js");
+const message_log = require("./client/message/log.js");
 
 client.login(config.token);
 
