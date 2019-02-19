@@ -9,10 +9,6 @@ const client = new CommandoClient({
     unknownCommandResponse: false,
 });
 
-const message_log = require("./client/message/log.js");
-
-client.login(config.token);
-
 client.registry
     .registerGroups([
         ["bot", "通常のbotコマンド"],
@@ -22,9 +18,13 @@ client.registry
     .registerDefaultTypes()
     .registerCommandsIn(`${__dirname}/commands/`);
 
+//files
+const message_log = require("./client/message/log.js");
+//files
+
 bot_on = false;
 
-client.on("ready", () => {
+client.once("ready", () => {
     console.log(`botを起動しました ${client.user.tag}`);
     client.user.setActivity("Commandoテスト中");
     bot_on = true;
@@ -32,6 +32,8 @@ client.on("ready", () => {
 
 client.on("message", message => {
     if (message.author.bot) return;
+
+    // message log
     message_log(client, message, config);
 });
 
@@ -67,3 +69,5 @@ client.on("disconnect", async event => {
         .catch();
     process.exit(0);
 });
+
+client.login(config.token);
