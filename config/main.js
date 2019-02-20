@@ -13,5 +13,6 @@ module.exports = {
     channel_id: {
         message_log: "542909938058526721",
         startup_log: "542910050167947265",
+        error:"542909982358634496",
     },
 };

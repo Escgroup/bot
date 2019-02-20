@@ -43,7 +43,7 @@ client.on("message", message => {
 
 // botの問題系
 client.on("error", error => {
-    error_log(client,error);
+    error_log(client, error, config.channel_id);
 });
 client.on("warn", async warn => {
     if (bot_on === false) return;
