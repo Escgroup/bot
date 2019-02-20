@@ -25,10 +25,13 @@ const message_log = require("./client/message/log.js");
 const error_log = require("./client/error/index.js");
 const warn_log = require("./client/warn/index.js");
 const debug_log = require("./client/debug/index.js");
+const disconnect_log = require("./client/disconnect/index.js");
 //files
 
+bot_on = false;
 client.once("ready", () => {
     ready(client, config);
+    bot_on = true;
 });
 
 client.on("message", message => {
@@ -41,16 +44,15 @@ client.on("message", message => {
 /* ログ */
 
 // botの問題系
-client.on("error", error => error_log(client, error, config.channel_id));
-client.on("warn", warn => warn_log(client, warn, config.channel_id));
-client.on("debug", debug => debug_log(client, debug, config.channel_id));
-client.on("disconnect", async event => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("543040492569624577")
-        .send(event.code)
-        .catch();
-    process.exit(0);
-});
+client.on("error", error =>
+    error_log(client, error, config.channel_id, bot_on)
+);
+client.on("warn", warn => warn_log(client, warn, config.channel_id, bot_on));
+client.on("debug", debug =>
+    debug_log(client, debug, config.channel_id, bot_on)
+);
+client.on("disconnect", event =>
+    disconnect_log(client, event, config.channel_id, bot_on)
+);
 
 client.login(config.token);
