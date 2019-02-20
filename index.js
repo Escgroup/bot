@@ -23,13 +23,11 @@ const ready = require("./client/ready/index.js");
 const message_log = require("./client/message/log.js");
 
 const error_log = require("./client/error/index.js");
+const warn_log = require("./client/warn/index.js");
 //files
-
-bot_on = false;
 
 client.once("ready", () => {
     ready(client, config);
-    bot_on = true;
 });
 
 client.on("message", message => {
@@ -42,23 +40,9 @@ client.on("message", message => {
 /* ログ */
 
 // botの問題系
-client.on("error", error => {
-    error_log(client, error, config.channel_id);
-});
-client.on("warn", async warn => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("543039202418229248")
-        .send(warn)
-        .catch();
-});
-client.on("debug", async debug => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("543027707089387522")
-        .send(debug)
-        .catch();
-});
+client.on("error", error => error_log(client, error, config.channel_id));
+client.on("warn", warn => warn_log(client, warn, config.channel_id));
+client.on("debug",  debug => );
 client.on("disconnect", async event => {
     if (bot_on === false) return;
     await client.channels
