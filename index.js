@@ -21,6 +21,8 @@ client.registry
 //files
 const ready = require("./client/ready/index.js");
 const message_log = require("./client/message/log.js");
+
+const error_log = require("./client/error/index.js");
 //files
 
 bot_on = false;
@@ -40,12 +42,8 @@ client.on("message", message => {
 /* ログ */
 
 // botの問題系
-client.on("error", async error => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("542909982358634496")
-        .send(error)
-        .catch();
+client.on("error", error => {
+    error_log(client,error);
 });
 client.on("warn", async warn => {
     if (bot_on === false) return;

@@ -41,7 +41,7 @@ module.exports = (client, message,config) => {
     }
 
     client.channels
-        .get(config.channel_id.message_id)
+        .get(config.channel_id.message_log)
         .fetchWebhooks()
         .then(hooks => {
             hooks.first().send(log_message, webhook_option);
