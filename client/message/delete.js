@@ -21,6 +21,7 @@ module.exports = (client, message, config) => {
                 inline: true,
             },
         ],
+        color: 0xd0021b,
     };
     client.channels
         .get(config.channel_id.message_delete_update)
