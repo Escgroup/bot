@@ -24,6 +24,7 @@ const message_log = require("./client/message/log.js");
 
 const error_log = require("./client/error/index.js");
 const warn_log = require("./client/warn/index.js");
+const debug_log = require("./client/debug/index.js");
 //files
 
 client.once("ready", () => {
@@ -42,7 +43,7 @@ client.on("message", message => {
 // botの問題系
 client.on("error", error => error_log(client, error, config.channel_id));
 client.on("warn", warn => warn_log(client, warn, config.channel_id));
-client.on("debug",  debug => );
+client.on("debug", debug => debug_log(client, debug, config.channel_id));
 client.on("disconnect", async event => {
     if (bot_on === false) return;
     await client.channels
