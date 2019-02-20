@@ -20,7 +20,9 @@ client.registry
 
 //files
 const ready = require("./client/ready/index.js");
+
 const message_log = require("./client/message/log.js");
+const message_delete = require("./client/message/delete.js");
 
 const error_log = require("./client/error/index.js");
 const warn_log = require("./client/warn/index.js");
@@ -41,7 +43,12 @@ client.on("message", message => {
     message_log(client, message, config);
 });
 
-/* ログ */
+client.on("messageDelete", message => {
+    if (message.author.bot) return;
+
+    // message_delete log
+    message_delete(client, message, config);
+});
 
 // botの問題系
 client.on("error", error =>
