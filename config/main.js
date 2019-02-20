@@ -2,7 +2,7 @@ module.exports = {
     token: require("./token.js").token,
     prefix: ",,",
     owner: {
-        id:"348385393160355840",
+        id: "348385393160355840",
     },
     guild: {
         main: {
@@ -12,5 +12,6 @@ module.exports = {
     },
     channel_id: {
         message_log: "542909938058526721",
+        on_of: "542910050167947265",
     },
 };

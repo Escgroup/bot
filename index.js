@@ -19,14 +19,14 @@ client.registry
     .registerCommandsIn(`${__dirname}/commands/`);
 
 //files
+const ready = require("./client/ready/index.js");
 const message_log = require("./client/message/log.js");
 //files
 
 bot_on = false;
 
 client.once("ready", () => {
-    console.log(`botを起動しました ${client.user.tag}`);
-    client.user.setActivity("Commandoテスト中");
+    ready(client, config);
     bot_on = true;
 });
 
