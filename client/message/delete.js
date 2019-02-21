@@ -21,6 +21,7 @@ module.exports = (client, message, config) => {
                 inline: true,
             },
         ],
+        timestamp: new Date(),
         color: 0xd0021b,
     };
     client.channels

@@ -23,6 +23,7 @@ const ready = require("./client/ready/index.js");
 
 const message_log = require("./client/message/log.js");
 const message_delete = require("./client/message/delete.js");
+const message_update = require("./client/message/update.js");
 
 const error_log = require("./client/error/index.js");
 const warn_log = require("./client/warn/index.js");
@@ -44,10 +45,20 @@ client.on("message", message => {
 });
 
 client.on("messageDelete", message => {
-    if (message.author.bot) return;
+    if (message.author.bot || !message.guild) return;
 
     // message_delete log
     message_delete(client, message, config);
+});
+client.on("messageUpdate", (oldMessage, newMessage) => {
+    if (
+        (oldMessage.author.bot && newMessage.author.bot) ||
+        (!oldMessage.guild && !newMessage.guild)
+    )
+        return;
+
+    // message_update log
+    message_update(client, oldMessage, newMessage, config);
 });
 
 // botの問題系
