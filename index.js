@@ -28,7 +28,8 @@ const message_update = require("./client/message/update.js");
 const error_log = require("./client/error/index.js");
 const warn_log = require("./client/warn/index.js");
 const debug_log = require("./client/debug/index.js");
-const disconnect_log = require("./client/disconnect/index.js");
+const disconnect_log = require("./client/connect/disconnect.js");
+const reconnecting_log = require("./client/connect/reconnecting.js");
 //files
 
 bot_on = false;
@@ -65,12 +66,17 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
 client.on("error", error =>
     error_log(client, error, config.channel_id, bot_on)
 );
-client.on("warn", warn => warn_log(client, warn, config.channel_id, bot_on));
+client.on("warn", warn =>
+    warn_log(client, warn, config.channel_id, bot_on)
+);
 client.on("debug", debug =>
     debug_log(client, debug, config.channel_id, bot_on)
 );
 client.on("disconnect", event =>
     disconnect_log(client, event, config.channel_id, bot_on)
+);
+client.on("reconnecting", () =>
+    reconnecting_log(client, config.channel_id, bot_on)
 );
 
 client.login(config.token);
