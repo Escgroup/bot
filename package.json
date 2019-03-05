@@ -5,6 +5,9 @@
   "repository": "https://github.com/Escgroup/Esc-bot.git",
   "author": "[Esc]™Group(mouse)",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "discord.js": "^11.4.2",
     "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
