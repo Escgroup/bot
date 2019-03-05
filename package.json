@@ -1,0 +1,15 @@
+{
+  "name": "Esc-bot",
+  "version": "3.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Escgroup/Esc-bot.git",
+  "author": "[Esc]™Group(mouse)",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
+  },
+  "devDependencies": {
+    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
+  }
+}
