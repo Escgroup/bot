@@ -1,5 +1,7 @@
 const { CommandoClient } = require("discord.js-commando");
 
+const client_module = require("./client/import.js");
+
 const config = require("./config/main.js");
 
 const client = new CommandoClient({
@@ -18,23 +20,9 @@ client.registry
     .registerDefaultTypes()
     .registerCommandsIn(`${__dirname}/commands/`);
 
-//files
-const ready = require("./client/ready/index.js");
-
-const message_log = require("./client/message/log.js");
-const message_delete = require("./client/message/delete.js");
-const message_update = require("./client/message/update.js");
-
-const error_log = require("./client/error/index.js");
-const warn_log = require("./client/warn/index.js");
-const debug_log = require("./client/debug/index.js");
-const disconnect_log = require("./client/connect/disconnect.js");
-const reconnecting_log = require("./client/connect/reconnecting.js");
-//files
-
 bot_on = false;
 client.once("ready", () => {
-    ready(client, config);
+    client_module.ready.index(client, config);
     bot_on = true;
 });
 
@@ -42,14 +30,14 @@ client.on("message", message => {
     if (message.author.bot) return;
 
     // message log
-    message_log(client, message, config);
+    client_module.message.log(client, message, config);
 });
 
 client.on("messageDelete", message => {
     if (message.author.bot || !message.guild) return;
 
     // message_delete log
-    message_delete(client, message, config);
+    client_module.message.delete(client, message, config);
 });
 client.on("messageUpdate", (oldMessage, newMessage) => {
     if (
@@ -59,24 +47,24 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
         return;
 
     // message_update log
-    message_update(client, oldMessage, newMessage, config);
+    client_module.message.update(client, oldMessage, newMessage, config);
 });
 
 // botの問題系
 client.on("error", error =>
-    error_log(client, error, config.channel_id, bot_on)
+    client_module.error.index(client, error, config.channel_id, bot_on)
 );
 client.on("warn", warn =>
-    warn_log(client, warn, config.channel_id, bot_on)
+    client_module.warn.index(client, warn, config.channel_id, bot_on)
 );
 client.on("debug", debug =>
-    debug_log(client, debug, config.channel_id, bot_on)
+    client_module.debug.index(client, debug, config.channel_id, bot_on)
 );
 client.on("disconnect", event =>
-    disconnect_log(client, event, config.channel_id, bot_on)
+    client_module.connect.disconnect(client, event, config.channel_id, bot_on)
 );
 client.on("reconnecting", () =>
-    reconnecting_log(client, config.channel_id, bot_on)
+    client_module.connect.reconnecting(client, config.channel_id, bot_on)
 );
 
 client.login(config.token);
