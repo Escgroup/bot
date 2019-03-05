@@ -1,7 +1,8 @@
-module.exports = (client, channel_id, bot_on) => {
-    console.log("再接続しています");
-    if (!bot_on) return;
+module.exports = (client, config) => {
+    console.log(`botを起動しました ${client.user.tag}`);
     client.channels
-        .get(channel_id.startup_log)
-        .send("再起動しています", { embed: { timestamp: new Date() } });
+        .get(config.channel_id.startup_log)
+        .send("起動しました", { embed: { timestamp: new Date() } });
+    client.user.setActivity("Commandoテスト中");
+    return;
 };
