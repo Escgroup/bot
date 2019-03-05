@@ -1,17 +1,15 @@
 const { CommandoClient } = require("discord.js-commando");
 
-const message_log = require("./client/message/log.js");
+const client_module = require("./client/import.js");
+
+const config = require("./config/main.js");
 
 const client = new CommandoClient({
-    commandPrefix: ",,",
-    owner: "348385393160355840",
-    invite: "https://discord.gg/dBcfbxP",
+    commandPrefix: config.prefix,
+    owner: config.owner.id,
+    invite: config.guild.main.url,
     unknownCommandResponse: false,
 });
-
-const config = require("./config.js");
-
-client.login(config.token);
 
 client.registry
     .registerGroups([
@@ -23,46 +21,50 @@ client.registry
     .registerCommandsIn(`${__dirname}/commands/`);
 
 bot_on = false;
-
-client.on("ready", () => {
-    console.log(`botを起動しました ${client.user.tag}`);
-    client.user.setActivity("Commandoテスト中");
+client.once("ready", () => {
+    client_module.ready.index(client, config);
     bot_on = true;
 });
 
-/* ログ */
-//message
 client.on("message", message => {
     if (message.author.bot) return;
-    message_log(client, message);
+
+    // message log
+    client_module.message.log(client, message, config);
 });
+
+client.on("messageDelete", message => {
+    if (message.author.bot || !message.guild) return;
+
+    // message_delete log
+    client_module.message.delete(client, message, config);
+});
+client.on("messageUpdate", (oldMessage, newMessage) => {
+    if (
+        (oldMessage.author.bot && newMessage.author.bot) ||
+        (!oldMessage.guild && !newMessage.guild)
+    )
+        return;
+
+    // message_update log
+    client_module.message.update(client, oldMessage, newMessage, config);
+});
+
 // botの問題系
-client.on("error", async error => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("542909982358634496")
-        .send(error)
-        .catch();
-});
-client.on("warn", async warn => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("543039202418229248")
-        .send(warn)
-        .catch();
-});
-client.on("debug", async debug => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("543027707089387522")
-        .send(debug)
-        .catch();
-});
-client.on("disconnect", async event => {
-    if (bot_on === false) return;
-    await client.channels
-        .get("543040492569624577")
-        .send(event.code)
-        .catch();
-    process.exit(0);
-});
+client.on("error", error =>
+    client_module.error.index(client, error, config.channel_id, bot_on)
+);
+client.on("warn", warn =>
+    client_module.warn.index(client, warn, config.channel_id, bot_on)
+);
+client.on("debug", debug =>
+    client_module.debug.index(client, debug, config.channel_id, bot_on)
+);
+client.on("disconnect", event =>
+    client_module.connect.disconnect(client, event, config.channel_id, bot_on)
+);
+client.on("reconnecting", () =>
+    client_module.connect.reconnecting(client, config.channel_id, bot_on)
+);
+
+client.login(config.token);
