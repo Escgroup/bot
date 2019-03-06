@@ -3,6 +3,6 @@ module.exports = (client, config) => {
     client.channels
         .get(config.channel_id.startup_log)
         .send("起動しました", { embed: { timestamp: new Date() } });
-    client.user.setActivity("Commandoテスト中");
+    client.user.setActivity(",help | [Esc]™Group v3.0.1");
     return;
 };
