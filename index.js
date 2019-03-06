@@ -14,6 +14,7 @@ const client = new CommandoClient({
 client.registry
     .registerGroups([
         ["bot", "通常のbotコマンド"],
+        ["esc", "[Esc]™グループコマンド"],
         ["admin", "サーバー管理者コマンド"],
         ["dev", "開発者コマンド"],
     ])
