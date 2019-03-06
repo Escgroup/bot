@@ -7,6 +7,11 @@ module.exports = {
     ready: {
         index: require("./ready/index.js"),
     },
+    guild: {
+        member: {
+            add: require("./guild/member/add.js"),
+        }
+    },
     connect: {
         disconnect: require("./connect/disconnect.js"),
         reconnecting: require("./connect/reconnecting.js"),
