@@ -50,6 +50,10 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     client_module.message.update(client, oldMessage, newMessage, config);
 });
 
+client.on("guildMemberAdd", member =>
+    client_module.guild.member.add(client, member)
+);
+
 // botの問題系
 client.on("error", error =>
     client_module.error.index(client, error, config.channel_id, bot_on)
