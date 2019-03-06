@@ -41,26 +41,39 @@ module.exports = async (client, member) => {
         },
     };
 
-    if (guild.id === config.guild.main.id) {
+    if (server.id === config.guild.main.id) {
         const readme_channel = config.guild.main.channel.readme;
         welcome_channel.send(
             `${user}さん ようこそ${
                 server.name
-            }へ!!\n${readme_channel}をよく読み同意できる場合\`,agree\`と入力してください。`
+            }へ!!\n<#${readme_channel}>をよく読み同意できる場合\`,agree\`と入力してください。`
         );
     } else {
         welcome_channel.send(`${user}さん ようこそ${server.name}へ!!`);
         const main_server = client.guilds.get(config.guild.main.id);
-        const member_role = server.roles.find(r => r.name === "[Esc] member");
-        const main_member = await main_server.members.get(user.id).catch(() => {
-            return welcome_channel.send("mainにいない");
-        });
-        const main_member_role = config.guild.main.role.member;
-        if (main_member.roles.has(main_member_role)) {
-            user.addRole(member_role);
-            welcome_channel.send(`${user.tag}自動認証しました`);
-        }else{
-            welcome_channel.send(`${user}メインサーバーで同意していないようです、同意をお願いします`);
+        if (main_server.members.has(user.id)) {
+            const main_member = main_server.members.get(user.id);
+            const member_role = server.roles.find(
+                role => role.name === "[Esc] member"
+            );
+            const main_member_role = config.guild.main.role.member;
+            if (main_member.roles.has(main_member_role)) {
+                user.addRole(member_role);
+                welcome_channel.send(`${user.tag}自動認証しました`);
+            } else {
+                welcome_channel.send(
+                    `${
+                        user.tag
+                    }\nmainサーバーで同意していないようです、同意をお願いします`
+                );
+            }
+        } else {
+            welcome_channel.send(
+                `${
+                    user.tag
+                }\nmainサーバーに参加し、認証されていないようです。\n荒らし対策等の観点から認証をお願いしています。(招待をDMへ送信します)`
+            );
+            user.send(config.guild.main.url);
         }
     }
 

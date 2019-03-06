@@ -7,7 +7,7 @@ module.exports = {
     guild: {
         main: {
             id: "443320971609374721",
-            url: "https://discord.gg/dBcfbxP",
+            url: "https://discord.gg/6EhyV5u",
             channel: {
                 readme: "541581225702195210",
             },

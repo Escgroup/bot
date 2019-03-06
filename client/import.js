@@ -9,7 +9,7 @@ module.exports = {
     },
     guild: {
         member: {
-            add: require("./guildMember/add.js"),
+            add: require("./guild/member/add.js"),
         }
     },
     connect: {
