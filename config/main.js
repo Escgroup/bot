@@ -8,6 +8,12 @@ module.exports = {
         main: {
             id: "443320971609374721",
             url: "https://discord.gg/dBcfbxP",
+            channel: {
+                readme: "541581225702195210",
+            },
+            role: {
+                member: "483849517071073284",
+            },
         },
     },
     channel_id: {
