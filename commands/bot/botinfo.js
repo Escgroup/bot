@@ -1,6 +1,7 @@
 const { Command } = require("discord.js-commando");
 
 const package_file = require("../../package.json");
+const info_channel = require("../../config/main.js").guild.main.channel.info;
 
 module.exports = class bot_info_command extends Command {
     constructor(client) {
@@ -17,6 +18,7 @@ module.exports = class bot_info_command extends Command {
         const bot = this.client.user;
         const guilds = this.client.guilds;
         const users = this.client.users;
+        const channels = this.client.channels;
 
         return message.say({
             embed: {
@@ -27,14 +29,29 @@ module.exports = class bot_info_command extends Command {
                 fields: [
                     { name: "ユーザー名", value: bot.tag, inline: true },
                     { name: "ID", value: bot.id, inline: true },
+                    {name:"ステータス",value:"",},
                     { name: "サーバー数", value: guilds.size, inline: true },
                     { name: "ユーザー数", value: users.size, inline: true },
+                    {name:"チャンネル数",value:channels.size,inline:true},
                     {
                         name: "バージョン",
                         value: package_file.version,
                         inline: true,
                     },
+                    { name: "開発・運営", value: "mouse#2240", inline: true },
+                    {
+                        name: "質問・意見・問題報告等",
+                        value: `<#${info_channel.bot_question}>/<#${
+                            info_channel.bot_opinion
+                        }>/<#${
+                            info_channel.bot_problem
+                        }> または [GitHub](https://github.com/Escgroup/Esc-bot/issues)`,
+                    },
                 ],
+                footer: {
+                    text: "起動時間",
+                },
+                timestamp: this.client.readyAt,
                 color: 0xb8e986,
             },
         });
