@@ -10,6 +10,11 @@ module.exports = {
             url: "https://discord.gg/6EhyV5u",
             channel: {
                 readme: "541581225702195210",
+                info: {
+                    bot_question: "545937082556874753",
+                    bot_opinion: "545937226111123456",
+                    bot_problem: "545937374828298260",
+                },
             },
             role: {
                 member: "483849517071073284",
