@@ -88,6 +88,7 @@ module.exports = class server_ping_command extends Command {
                     text: "作成日",
                 },
                 timestamp: server.createdAt,
+                color: 0xB8E986,
             },
         });
     }
