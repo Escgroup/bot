@@ -29,10 +29,18 @@ module.exports = class bot_info_command extends Command {
                 fields: [
                     { name: "ユーザー名", value: bot.tag, inline: true },
                     { name: "ID", value: bot.id, inline: true },
-                    {name:"ステータス",value:"",},
+                    {
+                        name: "ステータス",
+                        value: bot.presence.status,
+                        inline: true,
+                    },
                     { name: "サーバー数", value: guilds.size, inline: true },
                     { name: "ユーザー数", value: users.size, inline: true },
-                    {name:"チャンネル数",value:channels.size,inline:true},
+                    {
+                        name: "チャンネル数",
+                        value: channels.size,
+                        inline: true,
+                    },
                     {
                         name: "バージョン",
                         value: package_file.version,
