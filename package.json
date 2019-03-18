@@ -13,6 +13,7 @@
     "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
   },
   "devDependencies": {
+    "eslint": "^5.15.2",
     "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
   }
 }
