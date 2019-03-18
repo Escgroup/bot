@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "eslint": "^5.15.2",
-    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master"
+    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master",
+    "prettier": "^1.16.4"
   }
 }
