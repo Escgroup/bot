@@ -1,6 +1,6 @@
 module.exports = {
-    token: process.env.TOKEN,
-    prefix: ",",
+    token: require("./token").token,
+    prefix: ",,",
     owner: {
         id: "348385393160355840",
     },
