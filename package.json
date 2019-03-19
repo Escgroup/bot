@@ -1,7 +1,6 @@
 {
   "name": "Esc-bot",
-  "version": "3.0.2",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "main": "index.js",
   "repository": "https://github.com/Escgroup/Esc-bot.git",
   "author": "[Esc]™Group(mouse)",
@@ -10,6 +9,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cheerio-httpcli": "^0.7.4",
     "discord.js": "^11.4.2",
     "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
   },

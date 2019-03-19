@@ -15,6 +15,7 @@ client.registry
     .registerGroups([
         ["bot", "通常のbotコマンド"],
         ["esc", "[Esc]™グループコマンド"],
+        ["conv", "便利コマンド"],
         ["admin", "サーバー管理者コマンド"],
         ["dev", "開発者コマンド"],
     ])

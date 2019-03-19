@@ -1,8 +1,11 @@
 module.exports = {
-    token: require("./token").token,
-    prefix: ",,",
+    token: process.env.TOKEN,
+    prefix: ",",
     owner: {
         id: "348385393160355840",
+    },
+    api: {
+        translate: process.env.TRANSLATE,
     },
     guild: {
         main: {
