@@ -49,11 +49,7 @@ module.exports = class bot_info_command extends Command {
                     { name: "開発・運営", value: "mouse#2240", inline: true },
                     {
                         name: "質問・意見・問題報告等",
-                        value: `<#${info_channel.bot_question}>/<#${
-                            info_channel.bot_opinion
-                        }>/<#${
-                            info_channel.bot_problem
-                        }> または [GitHub](https://github.com/Escgroup/Esc-bot/issues)`,
+                        value: "`information`コマンド または [GitHub](https://github.com/Escgroup/Esc-bot/issues)",
                     },
                 ],
                 footer: {

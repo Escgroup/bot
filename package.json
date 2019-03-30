@@ -1,21 +1,23 @@
 {
-  "name": "Esc-bot",
-  "version": "3.0.3",
-  "main": "index.js",
-  "repository": "https://github.com/Escgroup/Esc-bot.git",
-  "author": "[Esc]™Group(mouse)",
-  "license": "MIT",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "cheerio-httpcli": "^0.7.4",
-    "discord.js": "^11.4.2",
-    "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
-  },
-  "devDependencies": {
-    "eslint": "^5.15.2",
-    "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master",
-    "prettier": "^1.16.4"
-  }
+    "name": "Esc-bot",
+    "version": "3.0.4",
+    "main": "index.js",
+    "repository": "https://github.com/Escgroup/Esc-bot.git",
+    "author": "[Esc]™Group(mouse)",
+    "license": "MIT",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node --require dotenv/config index.js"
+    },
+    "dependencies": {
+        "cheerio-httpcli": "^0.7.4",
+        "discord.js": "^11.4.2",
+        "discord.js-commando": "github:mouse484/Commando#djs-v11-japanese"
+    },
+    "devDependencies": {
+        "dotenv": "^7.0.0",
+        "eslint": "^5.15.2",
+        "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master",
+        "prettier": "^1.16.4"
+    }
 }

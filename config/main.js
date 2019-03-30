@@ -1,6 +1,6 @@
 module.exports = {
     token: process.env.TOKEN,
-    prefix: ",",
+    prefix: process.env.PREFIX,
     owner: {
         id: "348385393160355840",
     },
@@ -13,11 +13,8 @@ module.exports = {
             url: "https://discord.gg/6EhyV5u",
             channel: {
                 readme: "541581225702195210",
-                info: {
-                    bot_question: "545937082556874753",
-                    bot_opinion: "545937226111123456",
-                    bot_problem: "545937374828298260",
-                },
+                info: "560724669062184975",
+                infor: "560742018855469056",
             },
             role: {
                 member: "483849517071073284",

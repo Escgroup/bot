@@ -19,7 +19,9 @@ module.exports = class EvalCommand extends Command {
     }
 
     run(message, { code }) {
-        const eval_log_channel = this.client.channels.get("543309242933968906");
+        const client = this.client;
+
+        const eval_log_channel = client.channels.get("543309242933968906");
 
         try {
             const evaled = eval(code);

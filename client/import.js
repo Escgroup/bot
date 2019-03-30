@@ -10,6 +10,7 @@ module.exports = {
     guild: {
         member: {
             add: require("./guild/member/add.js"),
+            remove: require("./guild/member/remove.js"),
         }
     },
     connect: {

@@ -17,6 +17,7 @@ client.registry
         ["esc", "[Esc]™グループコマンド"],
         ["conv", "便利コマンド"],
         ["admin", "サーバー管理者コマンド"],
+        ["staff", "スタッフ専用コマンド"],
         ["dev", "開発者コマンド"],
     ])
     .registerDefaultTypes()
@@ -52,9 +53,8 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     client_module.message.update(client, oldMessage, newMessage, config);
 });
 
-client.on("guildMemberAdd", member =>
-    client_module.guild.member.add(client, member)
-);
+client.on("guildMemberAdd", member => client_module.guild.member.add(client, member));
+client.on("guildMemberRemove", member => client_module.guild.member.remove(client, member));
 
 // botの問題系
 client.on("error", error =>
