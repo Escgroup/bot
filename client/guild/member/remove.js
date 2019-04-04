@@ -33,13 +33,13 @@ module.exports = (client, member) => {
                 icon_url: user.avatarURL,
                 text: "退出",
             },
-            color: 0xD0021B,
+            color: 0xd0021b,
         },
     };
 
     let isG = "";
     if (server.id === config.guild.main.id) {
-        client.guilds.forEach((guilds) => {
+        client.guilds.forEach(guilds => {
             try {
                 guilds.members.get(user.id).edit({
                     roles: [],

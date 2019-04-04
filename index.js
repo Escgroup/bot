@@ -16,6 +16,7 @@ client.registry
         ["bot", "通常のbotコマンド"],
         ["esc", "[Esc]™グループコマンド"],
         ["conv", "便利コマンド"],
+        ["point", "ポイント関係コマンド"],
         ["admin", "サーバー管理者コマンド"],
         ["staff", "スタッフ専用コマンド"],
         ["dev", "開発者コマンド"],
@@ -29,11 +30,17 @@ client.once("ready", () => {
     bot_on = true;
 });
 
-client.on("message", message => {
+client.on("message", async message => {
     if (message.author.bot) return;
 
     // message log
     client_module.message.log(client, message, config);
+    // message check
+    const check = await client_module.message.check(client, message);
+    console.log(check);
+
+    // message point
+    client_module.message.point(client, message);
 });
 
 client.on("messageDelete", message => {
@@ -53,8 +60,12 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
     client_module.message.update(client, oldMessage, newMessage, config);
 });
 
-client.on("guildMemberAdd", member => client_module.guild.member.add(client, member));
-client.on("guildMemberRemove", member => client_module.guild.member.remove(client, member));
+client.on("guildMemberAdd", member =>
+    client_module.guild.member.add(client, member)
+);
+client.on("guildMemberRemove", member =>
+    client_module.guild.member.remove(client, member)
+);
 
 // botの問題系
 client.on("error", error =>

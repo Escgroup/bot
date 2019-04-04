@@ -13,7 +13,8 @@ module.exports = class information_command extends Command {
             args: [
                 {
                     key: "title",
-                    prompt: "内容のを完結にまとめたタイトルを入力してください。",
+                    prompt:
+                        "内容のを完結にまとめたタイトルを入力してください。",
                     type: "string",
                 },
                 {
@@ -26,7 +27,7 @@ module.exports = class information_command extends Command {
     }
 
     run(message, args) {
-        if(message.guild){
+        if (message.guild) {
             return message.say("DMで送信してください。");
         }
         const user = message.author;
@@ -47,8 +48,13 @@ module.exports = class information_command extends Command {
             },
         };
 
-        this.client.channels.get(config.guild.main.channel.info).send(info_em)
+        this.client.channels
+            .get(config.guild.main.channel.info)
+            .send(info_em)
             .then(msg => msg.react("✅"));
-        message.say("メッセージを送信しました、後ほどDMで返信します。", info_em);
+        message.say(
+            "メッセージを送信しました、後ほどDMで返信します。",
+            info_em
+        );
     }
 };

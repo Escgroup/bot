@@ -3,6 +3,8 @@ module.exports = {
         log: require("./message/log.js"),
         update: require("./message/update.js"),
         delete: require("./message/delete.js"),
+        point: require("./message/point.js"),
+        check: require("./message/check.js"),
     },
     ready: {
         index: require("./ready/index.js"),
@@ -11,7 +13,7 @@ module.exports = {
         member: {
             add: require("./guild/member/add.js"),
             remove: require("./guild/member/remove.js"),
-        }
+        },
     },
     connect: {
         disconnect: require("./connect/disconnect.js"),

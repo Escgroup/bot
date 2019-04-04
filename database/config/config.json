@@ -1,0 +1,14 @@
+{
+    "development": {
+        "dialect": "sqlite",
+        "storage": "database/Esc-bot.db"
+    },
+    "test": {
+        "dialect": "sqlite",
+        "storage": "database/Esc-bot.db"
+    },
+    "production": {
+        "dialect": "sqlite",
+        "storage": "database/Esc-bot.db"
+    }
+}

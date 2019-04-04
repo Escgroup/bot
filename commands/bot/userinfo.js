@@ -20,7 +20,7 @@ module.exports = class user_info extends Command {
     }
 
     run(message, { user }) {
-        const user_info = (user_id) => {
+        const user_info = user_id => {
             const user = this.client.users.get(user_id);
             return {
                 embed: {
@@ -32,16 +32,23 @@ module.exports = class user_info extends Command {
                     fields: [
                         { name: "ユーザー名", value: user.tag, inline: true },
                         { name: "ID", value: user.id, inline: true },
-                        { name: "ステータス", value: user.presence.status, inline: true },
-                        { name: "Bot", value: user.bot ? "はい" : "いいえ", inline: true },
+                        {
+                            name: "ステータス",
+                            value: user.presence.status,
+                            inline: true,
+                        },
+                        {
+                            name: "Bot",
+                            value: user.bot ? "はい" : "いいえ",
+                            inline: true,
+                        },
                     ],
                     footer: { text: "作成日" },
                     timestamp: user.createdAt,
-                    color: 0xB8E986,
+                    color: 0xb8e986,
                 },
             };
-        }
-
+        };
 
         if (user) {
             return message.say(user_info(user.id));

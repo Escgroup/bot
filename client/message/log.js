@@ -1,4 +1,4 @@
-module.exports = (client, message,config) => {
+module.exports = (client, message, config) => {
     const log_message = message.cleanContent;
 
     /*global webhook_option*/

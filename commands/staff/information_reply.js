@@ -49,6 +49,5 @@ module.exports = class information_command extends Command {
         args.user.send(info_re).then(() => {
             message.say(`${args.user}に返信しました`, info_re);
         });
-
     }
 };

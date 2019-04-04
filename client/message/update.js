@@ -26,7 +26,7 @@ module.exports = (client, oldMessage, newMessage, config) => {
             },
         ],
         timestamp: new Date(),
-        color: 0x09E151,
+        color: 0x09e151,
     };
     client.channels
         .get(config.channel_id.message_delete_update)

@@ -33,7 +33,7 @@ const permissions = {
     MANAGE_ROLES_OR_PERMISSIONS: "",
     MANAGE_WEBHOOKS: "WebHooksの管理",
     MANAGE_EMOJIS: "絵文字の管理",
-}
+};
 
 module.exports = class role_info extends Command {
     constructor(client) {
@@ -60,16 +60,17 @@ module.exports = class role_info extends Command {
             const r_a_p = role.serialize();
             const role_permissions = Object.keys(r_a_p)
                 .filter(key => r_a_p[key] && permissions[key])
-                .map(key => permissions[key]).join("、  ");
+                .map(key => permissions[key])
+                .join("、  ");
 
             const has_role = () => {
                 const has_members = `${role.members.map(m => m.user.username)}`;
                 if (has_members.length > 500) {
                     return `${has_members.slice(0, 500)} ...`;
-                }else{
+                } else {
                     return has_members;
                 }
-            }
+            };
 
             return message.say({
                 embed: {
@@ -77,7 +78,11 @@ module.exports = class role_info extends Command {
                     fields: [
                         { name: "役職名", value: `${role}`, inline: true },
                         { name: "ID", value: role.id, inline: true },
-                        { name: "所持人数", value: role.members.size, inline: true },
+                        {
+                            name: "所持人数",
+                            value: role.members.size,
+                            inline: true,
+                        },
                         { name: "権限", value: `${role_permissions}` },
                         { name: "所持者", value: has_role() },
                     ],
@@ -91,8 +96,10 @@ module.exports = class role_info extends Command {
                         icon_url: message.guild.iconURL,
                         name: `${message.guild.name}の役職一覧`,
                     },
-                    description: `${message.guild.roles.map(r => r.name).join("\n")}`,
-                    color: 0xB8E986,
+                    description: `${message.guild.roles
+                        .map(r => r.name)
+                        .join("\n")}`,
+                    color: 0xb8e986,
                 },
                 split: true,
             });
