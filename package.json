@@ -7,7 +7,8 @@
     "license": "MIT",
     "scripts": {
         "start": "node index.js",
-        "dev": "node --require dotenv/config index.js"
+        "dev": "node --require dotenv/config index.js",
+        "db": "cd database && node createdb.js"
     },
     "dependencies": {
         "cheerio-httpcli": "^0.7.4",
