@@ -23,9 +23,9 @@ module.exports = class search_command extends Command {
         const edit_message = await message.channel.send(
             "<a:loading:482420749668188170> | Google検索をしています..."
         );
-        if (!message.channel.name.match(/bot/)) {
+        if (message.guild && !message.channel.name.match(/bot/)) {
             return edit_message.edit(
-                "ログが流れてしまうため、`bot`が含まれていないチャンネルでは使用できません"
+                "ログが流れてしまうため、`bot`が含まれているチャンネル又はDMで利用してください。"
             );
         }
 
