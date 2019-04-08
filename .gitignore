@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-# token file
-config/token\.js
+# database file
+*.db
