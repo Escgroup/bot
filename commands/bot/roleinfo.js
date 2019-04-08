@@ -65,6 +65,7 @@ module.exports = class role_info extends Command {
 
             const has_role = () => {
                 const has_members = `${role.members.map(m => m.user.username)}`;
+                if (!has_members) return "誰も所持していません";
                 if (has_members.length > 500) {
                     return `${has_members.slice(0, 500)} ...`;
                 } else {
