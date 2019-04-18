@@ -37,10 +37,9 @@ client.on("message", async message => {
     client_module.message.log(client, message, config);
     // message check
     const check = await client_module.message.check(client, message);
-    console.log(check);
 
     // message point
-    client_module.message.point(client, message);
+    if (check) client_module.message.point(client, message);
 });
 
 client.on("messageDelete", message => {
