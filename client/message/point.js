@@ -1,7 +1,11 @@
 const db = require("../../database/models/index.js");
 
-module.exports = (client, message) => {
+module.exports = async (client, message) => {
     const d_user = message.author;
+
+    const bot = await message.channel.fetchMessages({ limit: 1, before: message.id });
+    if (bot.first().author.bot) return;
+    if (!message.guild) return;
 
     db.point
         .findOrCreate({
