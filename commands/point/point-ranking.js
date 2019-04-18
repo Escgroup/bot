@@ -36,9 +36,7 @@ module.exports = class point_rank extends Command {
                 }
 
                 if (item[0] <= 10)
-                    item[1] += `${item[0]}: ${
-                        user.username
-                        } (${point}ポイント)\n`;
+                    item[1] += `${item[0]}: ${user.username} (${point}ポイント)\n`;
             }
         }
 
