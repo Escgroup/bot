@@ -5,6 +5,7 @@ module.exports = async (client, message) => {
 
     const bot = await message.channel.fetchMessages({ limit: 1, before: message.id });
     if (bot.first().author.bot) return;
+    if (!message.guild) return;
 
     db.point
         .findOrCreate({
