@@ -13,33 +13,38 @@ module.exports = class point_rank extends Command {
         });
     }
 
-    run(message) {
-        db.point
+    async run(message) {
+        const results = await db.point
             .findAll({
                 order: [["point", "DESC"]],
-            })
-            .then(results => {
-                const item = [0, "", ""];
-                for (const value of results) {
-                    const user = this.client.users.get(
-                        value.dataValues.user_id
-                    );
-                    const point = value.dataValues.point;
+            });
 
-                    item[0] += 1;
+        const item = [0, "", ""];
+        for (const value of results) {
+            const user = this.client.users.get(
+                value.dataValues.user_id
+            );
 
-                    if (user.id === message.author.id) {
-                        item[2] += `あなたのランクは ${item[0]} です！`;
-                    }
+            if (`${user}`.match(/<@.+>/)) {
 
-                    if (item[0] <= 10)
-                        item[1] += `${item[0]}: ${
-                            user.username
-                        } (${point}ポイント)\n`;
+                const point = value.dataValues.point;
+
+                item[0] += 1;
+
+                if (user.id === message.author.id) {
+                    item[2] += `あなたのランクは ${item[0]} です！`;
                 }
 
-                item[1] += `\n\n${item[2]}`;
-                message.say(item[1], { code: "js" });
-            });
+                if (item[0] <= 10)
+                    item[1] += `${item[0]}: ${
+                        user.username
+                        } (${point}ポイント)\n`;
+            }
+        }
+
+        item[1] += `\n\n${item[2]}`;
+        message.say(item[1], { code: "js" });
+
+
     }
 };
