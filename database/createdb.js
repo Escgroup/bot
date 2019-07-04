@@ -19,5 +19,5 @@ db.serialize(() => {
             () => console.log(`${table[0]}テーブルを作成しました。`)
         );
     });
-    db.close(() => console.log("DB設定を完了し、終了しました。"));
+    return db.close(() => console.log("DB設定を完了し、終了しました。"));
 });
