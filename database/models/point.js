@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         { freezeTableName: true }
     );
-    point.associate = function() {
-        // function(models)
-    };
+    // point.associate = function() {
+    //     // function(models)
+    // };
     return point;
 };
