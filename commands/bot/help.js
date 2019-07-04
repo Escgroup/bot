@@ -94,18 +94,14 @@ module.exports = class HelpCommand extends Command {
 
                 message
                     .say(
-                        `<a:loading:482420749668188170> | ${
-                            commands[0].name
-                        }のヘルプを DM に送信しています...`
+                        `<a:loading:482420749668188170> | ${commands[0].name}のヘルプを DM に送信しています...`
                     )
                     .then(edit_message =>
                         message.author
                             .send(help)
                             .then(() => {
                                 edit_message.edit(
-                                    `:envelope_with_arrow: | ${
-                                        commands[0].name
-                                    }コマンドのヘルプを DM に送信しました`
+                                    `:envelope_with_arrow: | ${commands[0].name}コマンドのヘルプを DM に送信しました`
                                 );
                             })
                             .catch(() => {

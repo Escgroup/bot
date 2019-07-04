@@ -55,9 +55,7 @@ module.exports = class translate_command extends Command {
                         embed: {
                             author: {
                                 name: "Google翻訳",
-                                url: `https://translate.google.co.jp/&sl=auto&tl=${
-                                    args.lang
-                                }&text=${args.text}`,
+                                url: `https://translate.google.co.jp/&sl=auto&tl=${args.lang}&text=${args.text}`,
                                 icon_url:
                                     "https://img.icons8.com/color/48/000000/google-translate.png",
                             },

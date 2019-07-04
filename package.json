@@ -1,5 +1,5 @@
 {
-    "name": "Esc-bot",
+    "name": "esc-bot",
     "version": "3.0.7",
     "main": "index.js",
     "repository": "https://github.com/Escgroup/Esc-bot.git",
@@ -8,6 +8,7 @@
     "scripts": {
         "start": "node index.js",
         "dev": "node --require dotenv/config index.js",
+        "lint": "eslint --fix .",
         "db": "cd database && node createdb.js"
     },
     "dependencies": {
@@ -21,6 +22,8 @@
         "dotenv": "^7.0.0",
         "eslint": "^5.15.2",
         "eslint-config-esc": "github:Esc-Developer/eslint-config-esc#master",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-prettier": "^3.1.0",
         "prettier": "^1.16.4"
     }
 }

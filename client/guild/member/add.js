@@ -44,9 +44,7 @@ module.exports = async (client, member) => {
     if (server.id === config.guild.main.id) {
         const readme_channel = config.guild.main.channel.readme;
         welcome_channel.send(
-            `${user}さん ようこそ${
-                server.name
-            }へ!!\n<#${readme_channel}>をよく読み同意できる場合\`,agree\`と入力してください。`
+            `${user}さん ようこそ${server.name}へ!!\n<#${readme_channel}>をよく読み同意できる場合\`,agree\`と入力してください。`
         );
     } else {
         welcome_channel.send(`${user}さん ようこそ${server.name}へ!!`);
@@ -62,16 +60,12 @@ module.exports = async (client, member) => {
                 welcome_channel.send(`${user.tag}自動認証しました`);
             } else {
                 welcome_channel.send(
-                    `${
-                        user.tag
-                    }\nmainサーバーで同意していないようです、同意をお願いします`
+                    `${user.tag}\nmainサーバーで同意していないようです、同意をお願いします`
                 );
             }
         } else {
             welcome_channel.send(
-                `${
-                    user.tag
-                }\nmainサーバーに参加し、認証されていないようです。\n荒らし対策等の観点から認証をお願いしています。(招待をDMへ送信します)`
+                `${user.tag}\nmainサーバーに参加し、認証されていないようです。\n荒らし対策等の観点から認証をお願いしています。(招待をDMへ送信します)`
             );
             user.send(config.guild.main.url);
         }

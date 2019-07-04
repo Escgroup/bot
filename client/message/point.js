@@ -3,7 +3,10 @@ const db = require("../../database/models/index.js");
 module.exports = async (client, message) => {
     const d_user = message.author;
 
-    const bot = await message.channel.fetchMessages({ limit: 1, before: message.id });
+    const bot = await message.channel.fetchMessages({
+        limit: 1,
+        before: message.id,
+    });
     if (bot.first().author.bot) return;
     if (!message.guild) return;
 

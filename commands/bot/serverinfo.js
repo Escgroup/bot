@@ -29,9 +29,7 @@ module.exports = class server_ping_command extends Command {
                     Esc_member_count += 1;
                 }
             });
-            return `${
-                server.members.size
-            } (bot: ${bot_count} / [Esc]member: ${Esc_member_count})`;
+            return `${server.members.size} (bot: ${bot_count} / [Esc]member: ${Esc_member_count})`;
         };
 
         const channel_count = () => {
@@ -49,9 +47,7 @@ module.exports = class server_ping_command extends Command {
                     channel_category += 1;
                 }
             });
-            return `${
-                message.guild.channels.size
-            } (text: ${channel_text} / voice: ${channel_voice} / category: ${channel_category})`;
+            return `${message.guild.channels.size} (text: ${channel_text} / voice: ${channel_voice} / category: ${channel_category})`;
         };
 
         const verify_level = () => {

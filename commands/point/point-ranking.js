@@ -14,19 +14,15 @@ module.exports = class point_rank extends Command {
     }
 
     async run(message) {
-        const results = await db.point
-            .findAll({
-                order: [["point", "DESC"]],
-            });
+        const results = await db.point.findAll({
+            order: [["point", "DESC"]],
+        });
 
         const item = [0, "", ""];
         for (const value of results) {
-            const user = this.client.users.get(
-                value.dataValues.user_id
-            );
+            const user = this.client.users.get(value.dataValues.user_id);
 
             if (`${user}`.match(/<@.+>/)) {
-
                 const point = value.dataValues.point;
 
                 item[0] += 1;
@@ -36,13 +32,13 @@ module.exports = class point_rank extends Command {
                 }
 
                 if (item[0] <= 10)
-                    item[1] += `${item[0]}: ${user.username} (${point}ポイント)\n`;
+                    item[1] += `${item[0]}: ${
+                        user.username
+                    } (${point}ポイント)\n`;
             }
         }
 
         item[1] += `\n\n${item[2]}`;
         message.say(item[1], { code: "js" });
-
-
     }
 };

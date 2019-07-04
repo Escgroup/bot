@@ -43,9 +43,7 @@ module.exports = class agree_command extends Command {
 
         if (this_server.id !== main_server)
             return message.say(
-                `mainサーバーでのみ実行できるコマンドです。\n ${
-                    config.guild.main.url
-                }`
+                `mainサーバーでのみ実行できるコマンドです。\n ${config.guild.main.url}`
             );
 
         if (!this_channel.name.match(/welcome/))

@@ -46,9 +46,7 @@ module.exports = class ReloadCommand extends Command {
                     );
                     this.client.emit("error", error);
                     return cmessage.say(
-                        `:x: | ${
-                            command_or_group.name
-                        } のリロードに失敗しました`
+                        `:x: | ${command_or_group.name} のリロードに失敗しました`
                     );
                 });
         } else {
