@@ -46,7 +46,7 @@ module.exports = class supportrmation_command extends Command {
             },
         };
 
-        return args.user.send(support_re).then(() => {
+        args.user.send(support_re).then(() => {
             message.say(`${args.user}に返信しました`, support_re);
         });
     }
