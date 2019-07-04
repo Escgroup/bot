@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         { freezeTableName: true }
     );
-    // Unnecessary function
-    // point.associate = function() {
-    //     // function(models)
-    // };
+    /* point.associate = function() {
+     *     // function(models)
+     * };
+     */
     return point;
 };
