@@ -20,6 +20,6 @@ db.serialize(() => {
         );
     });
     return db.close(() => {
-        return console.log("DB設定を完了し、終了しました。")
+        return console.log("DB設定を完了し、終了しました。");
     });
 });
