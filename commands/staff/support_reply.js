@@ -30,7 +30,7 @@ module.exports = class supportrmation_command extends Command {
         });
     }
 
-    run(message, args) {
+    static run(message, args) {
         const user = message.author;
         if (message.channel.id !== config.guild.main.channel.support_r) return;
 
@@ -46,7 +46,7 @@ module.exports = class supportrmation_command extends Command {
             },
         };
 
-        args.user.send(support_re).then(() => {
+        return args.user.send(support_re).then(() => {
             message.say(`${args.user}に返信しました`, support_re);
         });
     }
