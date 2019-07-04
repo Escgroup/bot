@@ -26,7 +26,7 @@ module.exports = class supportrmation_command extends Command {
         });
     }
 
-    run(message, args) {
+    static run(message, args) {
         if (message.guild) {
             return message.say("DMで送信してください。");
         }
