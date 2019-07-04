@@ -2,13 +2,13 @@ const { Command } = require("discord.js-commando");
 
 const config = require("../../config/main.js");
 
-module.exports = class information_command extends Command {
+module.exports = class supportrmation_command extends Command {
     constructor(client) {
         super(client, {
-            name: "information",
-            aliases: ["info", "インフォメーション"],
+            name: "support",
+            aliases: ["support", "サポート"],
             group: "esc",
-            memberName: "information",
+            memberName: "サポート",
             description: "質問、意見等を受け付けます。",
             args: [
                 {
@@ -32,7 +32,7 @@ module.exports = class information_command extends Command {
         }
         const user = message.author;
 
-        const info_em = {
+        const support_em = {
             embed: {
                 author: {
                     name: user.username,
@@ -49,12 +49,12 @@ module.exports = class information_command extends Command {
         };
 
         this.client.channels
-            .get(config.guild.main.channel.info)
-            .send(info_em)
+            .get(config.guild.main.channel.support)
+            .send(support_em)
             .then(msg => msg.react("✅"));
         message.say(
             "メッセージを送信しました、後ほどDMで返信します。",
-            info_em
+            support_em
         );
     }
 };

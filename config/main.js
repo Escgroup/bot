@@ -13,7 +13,7 @@ module.exports = {
             url: "https://discord.gg/6EhyV5u",
             channel: {
                 readme: "541581225702195210",
-                info: "560724669062184975",
+                support: "560724669062184975",
                 infor: "560742018855469056",
             },
             role: {
