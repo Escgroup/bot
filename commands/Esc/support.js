@@ -52,7 +52,8 @@ module.exports = class supportrmation_command extends Command {
             .get(config.guild.main.channel.support)
             .send(support_em)
             .then(msg => msg.react("✅"));
-        message.say(
+
+        return message.say(
             "メッセージを送信しました、後ほどDMで返信します。",
             support_em
         );
