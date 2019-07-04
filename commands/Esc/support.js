@@ -6,7 +6,7 @@ module.exports = class supportrmation_command extends Command {
     constructor(client) {
         super(client, {
             name: "support",
-            aliases: ["support", "サポート"],
+            aliases: ["sup", "サポート"],
             group: "esc",
             memberName: "サポート",
             description: "質問、意見等を受け付けます。",

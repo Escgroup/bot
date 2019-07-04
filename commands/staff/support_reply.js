@@ -2,13 +2,13 @@ const { Command } = require("discord.js-commando");
 
 const config = require("../../config/main.js");
 
-module.exports = class information_command extends Command {
+module.exports = class supportrmation_command extends Command {
     constructor(client) {
         super(client, {
-            name: "information_reply",
-            aliases: ["infor"],
+            name: "support_reply",
+            aliases: ["support_r"],
             group: "staff",
-            memberName: "information_reply",
+            memberName: "support_reply",
             description: "質問、意見等の返信。",
             args: [
                 {
@@ -32,9 +32,9 @@ module.exports = class information_command extends Command {
 
     run(message, args) {
         const user = message.author;
-        if (message.channel.id !== config.guild.main.channel.infor) return;
+        if (message.channel.id !== config.guild.main.channel.support_r) return;
 
-        const info_re = {
+        const support_re = {
             embed: {
                 author: {
                     name: user.username,
@@ -42,12 +42,12 @@ module.exports = class information_command extends Command {
                 },
                 title: `${args.title}についての返答`,
                 description: `${args.text}\n
-                続けて対応が必要な場合は再度\`information\`コマンドを利用しタイトルの最後に何回目か書いてください。`,
+                続けて対応が必要な場合は再度\`support\`コマンドを利用しタイトルの最後に何回目か書いてください。`,
             },
         };
 
-        args.user.send(info_re).then(() => {
-            message.say(`${args.user}に返信しました`, info_re);
+        args.user.send(support_re).then(() => {
+            message.say(`${args.user}に返信しました`, support_re);
         });
     }
 };
