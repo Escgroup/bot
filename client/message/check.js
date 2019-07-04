@@ -1,3 +1,4 @@
+const ms_time = 1000;
 module.exports = async (client, message) => {
     const user = message.author;
     const channel = message.channel;
@@ -12,7 +13,7 @@ module.exports = async (client, message) => {
 
     if (fetch_message.author.id !== user.id) return true;
 
-    const time = (now - at) / 1000;
+    const time = (now - at) / ms_time;
     if (time < 1.8) {
         message
             .reply("\n:x: | もう少しゆっくり発言してください")
