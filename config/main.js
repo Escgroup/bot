@@ -1,6 +1,6 @@
 module.exports = {
     token: process.env.TOKEN,
-    prefix: process.env.PREFIX,
+    prefix: process.env.BOT_PREFIX,
     owner: {
         id: "348385393160355840",
     },
