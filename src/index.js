@@ -1,9 +1,7 @@
 const Ecstar = require("ecstar");
 
-const client = new Ecstar.client({
+const client = new Ecstar.Client({
     prefix: "!",
-    command: `${__dirname}/commands`,
-    log: true,
 });
 
 client.login(process.env.TOKEN);

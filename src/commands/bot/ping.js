@@ -1,6 +1,6 @@
-const { command } = require("ecstar");
+const { Command } = require("ecstar");
 
-module.exports = class extends command {
+module.exports = class extends Command {
     constructor(client) {
         super(client, {
             name: "ping",
