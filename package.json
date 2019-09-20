@@ -12,7 +12,7 @@
         "lint:fix": "eslint --fix ."
     },
     "dependencies": {
-        "ecstar": "mouse484/Ecstar#develop"
+        "ecstar": "mouse484/Ecstar"
     },
     "devDependencies": {
         "eslint": "^6.2.1",

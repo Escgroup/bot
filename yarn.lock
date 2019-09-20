@@ -186,9 +186,9 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-ecstar@mouse484/Ecstar#develop:
-  version "0.1.3"
-  resolved "https://codeload.github.com/mouse484/Ecstar/tar.gz/c8a971ade8046a5841a89da0df59e1dbd6926d45"
+ecstar@mouse484/Ecstar:
+  version "1.0.0"
+  resolved "https://codeload.github.com/mouse484/Ecstar/tar.gz/244a09a6d9ee226b7c07d035d7edccd53855042a"
   dependencies:
     chalk "^2.4.2"
     discord.js "^11.5.0"
