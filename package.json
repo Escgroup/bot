@@ -6,7 +6,7 @@
     "author": "[Esc]Group(mouse)",
     "license": "MIT",
     "scripts": {
-        "start": "node index.js",
+        "start": "node src/index.js",
         "dev": "yarn run lint:fix && yarn run start",
         "lint": "eslint .",
         "lint:fix": "eslint --fix ."
