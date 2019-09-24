@@ -186,11 +186,11 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-ecstar@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-0.1.3.tgz#4182824a17faeb8d119e6dd76be35e4981a55862"
-  integrity sha512-kl9huItPfPjtquSicMt2mg1KUpERI0gG4f+oIMDUDUVwEIyGgekSXo79P4ylfNxDz32Um2tT8Bsf7+qw3EeiuQ==
+ecstar@mouse484/Ecstar:
+  version "1.0.0"
+  resolved "https://codeload.github.com/mouse484/Ecstar/tar.gz/244a09a6d9ee226b7c07d035d7edccd53855042a"
   dependencies:
+    chalk "^2.4.2"
     discord.js "^11.5.0"
 
 emoji-regex@^7.0.1:

@@ -1,18 +1,18 @@
 {
     "name": "esc-bot",
-    "version": "4.0.0",
+    "version": "4.0.1β",
     "main": "index.js",
     "repository": "https://github.com/Escgroup/Esc-bot.git",
     "author": "[Esc]Group(mouse)",
     "license": "MIT",
     "scripts": {
-        "start": "node index.js",
+        "start": "node src/",
         "dev": "yarn run lint:fix && yarn run start",
         "lint": "eslint .",
         "lint:fix": "eslint --fix ."
     },
     "dependencies": {
-        "ecstar": "^0.1.3"
+        "ecstar": "mouse484/Ecstar"
     },
     "devDependencies": {
         "eslint": "^6.2.1",
