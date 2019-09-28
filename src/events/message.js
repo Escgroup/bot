@@ -1,18 +1,40 @@
-// eslint-disable-next-line max-lines-per-function
-module.exports = (client, message) => {
-    const log_message = message.cleanContent;
+const { Event } = require("ecstar");
 
-    const webhook_option = {
-        username: message.member.displayName,
-        avatarURL: message.author.avatarURL,
-    };
-
-    if (message.attachments.first()) {
-        webhook_option.file = message.attachments.first().url;
+module.exports = class extends Event {
+    constructor(client) {
+        super(client, "message");
     }
 
-    if (message.guild) {
-        webhook_option.embeds = [
+    run(message) {
+        if (message.author.bot) return;
+        this.options = {
+            username: message.author.tag,
+            avatarURL: message.author.avatarURL,
+        };
+
+        this.sets(message);
+
+        this.send(message.cleanContent, this.options);
+    }
+
+    sets(message) {
+        this.attachment(message);
+        if (message.guild) {
+            this.guild(message);
+        } else {
+            this.DM(message);
+        }
+    }
+
+    attachment(message) {
+        if (message.attachments.first()) {
+            this.options.file = message.attachments.first().url;
+        }
+    }
+
+    guild(message) {
+        const default_color = 0x87909c;
+        this.options.embeds = [
             {
                 fields: [
                     {
@@ -46,25 +68,29 @@ module.exports = (client, message) => {
                         inline: true,
                     },
                 ],
-                color: message.member.displayColor,
-                timestamp: new Date(),
-            },
-        ];
-    } else {
-        webhook_option.embeds = [
-            {
-                footer: {
-                    text: "DM",
-                },
-                timestamp: new Date(),
+                color: message.member.displayColor || default_color,
+                timestamp: message.createdAt,
             },
         ];
     }
 
-    client.channels
-        .get("625989592369332236")
-        .fetchWebhooks()
-        .then(hooks => {
-            hooks.first().send(log_message, webhook_option);
-        });
+    DM(message) {
+        this.options.embeds = [
+            {
+                footer: {
+                    text: "DM",
+                },
+                timestamp: message.createdAt,
+            },
+        ];
+    }
+
+    send(text, options) {
+        this.client.channels
+            .get("625989592369332236")
+            .fetchWebhooks()
+            .then(hooks => {
+                hooks.first().send(text, options);
+            });
+    }
 };
