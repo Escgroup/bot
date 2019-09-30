@@ -19,6 +19,23 @@ module.exports = class extends Command {
 
         message.member.addRole(role_id, "認証");
 
+        this.DM(message);
+
+        message.channel.send("認証が完了しました。(Authentication completed)");
+
+        this.client.channels.get("522689755654258689").send({
+            embed: {
+                author: {
+                    name: message.author.username,
+                    icon_url: message.author.avatarURL,
+                },
+                description: `${message.author.username}さんが参加したよ 🙂
+                ${message.author.username} joined 🙂`,
+            },
+        });
+    }
+
+    DM(message) {
         message.author.send({
             embed: {
                 fields: [
@@ -45,7 +62,5 @@ module.exports = class extends Command {
                 ],
             },
         });
-
-        message.channel.send("認証が完了しました。(Authentication completed)");
     }
 };
