@@ -1,6 +1,6 @@
 {
     "name": "esc-bot",
-    "version": "4.0.1β",
+    "version": "4.0.2",
     "main": "index.js",
     "repository": "https://github.com/Escgroup/Esc-bot.git",
     "author": "[Esc]Group(mouse)",
