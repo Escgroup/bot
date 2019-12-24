@@ -6,6 +6,8 @@ module.exports = class extends Event {
     }
 
     run(member) {
+        if (member.guild.id !== "443320971609374721") return;
+
         const server = member.guild;
         const user = member.user;
         this.client.channels.get("494050319508963328").send({
