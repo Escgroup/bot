@@ -7,7 +7,7 @@ module.exports = class extends Event {
 
     run(member) {
         if (member.guild.id !== "443320971609374721") return;
-        this.client.channels.get("494423151183134730").send({
+        this.client.channels.get("494423151183134730").send(member.user, {
             embed: {
                 title: "🎉Welcome to [Esc] Group Discord Community🎉",
                 fields: [
