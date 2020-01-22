@@ -12,11 +12,11 @@
         "lint:fix": "eslint --fix ."
     },
     "dependencies": {
-        "ecstar": "^2.0.4"
+        "ecstar": "^3.0.4",
+        "eslint-config-mouse": "mouse484/eslint-config"
     },
     "devDependencies": {
         "eslint": "^6.2.1",
-        "eslint-config-esc": "Esc-Developer/eslint-config-esc",
         "eslint-config-prettier": "^6.1.0",
         "eslint-plugin-prettier": "^3.1.0",
         "prettier": "^1.18.2"
