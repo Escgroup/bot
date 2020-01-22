@@ -6,6 +6,8 @@ module.exports = class extends Event {
   }
 
   run(member) {
+    const readmeChannel = '638280071999913994';
+
     if (member.guild.id !== '443320971609374721') return;
     this.client.channels.get('494423151183134730').send(member.user, {
       embed: {
@@ -15,13 +17,13 @@ module.exports = class extends Event {
             name: '日本語',
             value: `ようこそ \`${member.user.username}\` ✨
                         このサーバーでは荒し対策の為認証を行っています
-                        <#541581225702195210> の内容をよく読み同意できる場合\`,agree\`と入力してください`,
+                        <#${readmeChannel}> の内容をよく読み同意できる場合\`,agree\`と入力してください`,
           },
           {
             name: 'English',
             value: `Nice to see you \`${member.user.username}\` ✨
                         This server is authenticating for troll countermeasures
-                        If you can read and agree to <#541581225702195210> enter \`,agree\``,
+                        If you can read and agree to <#${readmeChannel}> enter \`,agree\``,
           },
         ],
       },
