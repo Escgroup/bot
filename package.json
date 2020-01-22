@@ -1,24 +1,24 @@
 {
-    "name": "esc-bot",
-    "version": "4.0.2",
-    "main": "index.js",
-    "repository": "https://github.com/Escgroup/Esc-bot.git",
-    "author": "[Esc]Group(mouse)",
-    "license": "MIT",
-    "scripts": {
-        "start": "node src/",
-        "dev": "yarn run lint:fix && yarn run start",
-        "lint": "eslint .",
-        "lint:fix": "eslint --fix ."
-    },
-    "dependencies": {
-        "ecstar": "^3.0.4",
-        "eslint-config-mouse": "mouse484/eslint-config"
-    },
-    "devDependencies": {
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.1.0",
-        "eslint-plugin-prettier": "^3.1.0",
-        "prettier": "^1.18.2"
-    }
+  "name": "esc-bot",
+  "version": "4.0.2",
+  "main": "index.js",
+  "repository": "https://github.com/Escgroup/Esc-bot.git",
+  "author": "[Esc]Group(mouse)",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/",
+    "dev": "yarn run lint:fix && yarn run start",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "ecstar": "^3.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-config-mouse": "mouse484/eslint-config",
+    "prettier": "^1.18.2"
+  }
 }
