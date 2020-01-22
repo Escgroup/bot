@@ -1,7 +1,7 @@
-const Ecstar = require("ecstar");
+const { Client } = require('ecstar');
 
-const client = new Ecstar.Client({
-    prefix: ",",
+const client = new Client({
+  prefix: ',',
 });
 
 client.login(process.env.TOKEN);
