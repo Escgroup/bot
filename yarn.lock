@@ -240,8 +240,8 @@ escape-string-regexp@^1.0.5:
 
 eslint-config-mouse@mouse484/eslint-config:
   version "1.0.0"
-  uid d6b96145c812b518122b380397ff4ca275502f0b
-  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/d6b96145c812b518122b380397ff4ca275502f0b"
+  uid "98bf93427d23acad94380211d5b1e60734196c74"
+  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/98bf93427d23acad94380211d5b1e60734196c74"
 
 eslint-config-prettier@^6.10.0:
   version "6.10.0"
