@@ -173,6 +173,11 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
+confusing-browser-globals@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.9.tgz#72bc13b483c0276801681871d4898516f8f54fdd"
+  integrity sha512-KbS1Y0jMtyPgIxjO7ZzMAuUpAKMt1SzCL9fsrKsX6b0zJPTaT0SiSPmewwVZg9UAO83HVIlEhZF84LIjZ0lmAw==
+
 cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -240,8 +245,10 @@ escape-string-regexp@^1.0.5:
 
 eslint-config-mouse@mouse484/eslint-config:
   version "1.0.0"
-  uid "85370f8b38782b3a9b2a4c69ae12bb9a299b12dd"
-  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/85370f8b38782b3a9b2a4c69ae12bb9a299b12dd"
+  uid "8246bb5def35a26fe7b7f720cca3936fc16221db"
+  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/8246bb5def35a26fe7b7f720cca3936fc16221db"
+  dependencies:
+    confusing-browser-globals "^1.0.9"
 
 eslint-config-prettier@^6.10.0:
   version "6.10.0"
