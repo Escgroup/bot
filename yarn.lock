@@ -214,10 +214,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-ecstar@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-3.0.5.tgz#9842149ce0b9df6deae286dcbdef3b6105cf864d"
-  integrity sha512-Cu4//nByxpSe9A8Wu2Qinjn0mnKfe9YsLMKjc9gNFv/hNxz+sn3DBDD14YrKIGUQ5fuEqtv9vlHcD4x3eeJwuA==
+ecstar@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-3.0.7.tgz#0ba9048c244e269e402463f37d16243f35554c47"
+  integrity sha512-aNzMavgun3VAMOpQBIhnd10qSFVDAi8uU4b8JtSpgDAGoE1gSYqYXhH/B20YVfyF/UA7K+3S3TlGEhHFQwJjbw==
   dependencies:
     chalk "^3.0.0"
     discord.js "11.5.1"
