@@ -16,9 +16,9 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
+    "eslint-config-mouse": "mouse484/eslint-config",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-config-mouse": "mouse484/eslint-config",
     "prettier": "^2.0.2"
   }
 }

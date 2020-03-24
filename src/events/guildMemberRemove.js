@@ -10,7 +10,7 @@ module.exports = class extends Event {
 
     const server = member.guild;
     const { user } = member;
-    this.client.channels.get('494050319508963328').send({
+    member.client.channels.cache.get('494050319508963328').send({
       embed: {
         author: {
           name: server.name,

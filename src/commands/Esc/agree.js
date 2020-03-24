@@ -12,18 +12,18 @@ module.exports = class extends Command {
 
     const roleId = '483849517071073284';
 
-    if (message.member.roles.has(roleId)) {
+    if (message.member.roles.cache.has(roleId)) {
       message.channel.send('認証されています。(Authenticated)');
       return;
     }
 
-    message.member.addRole(roleId, '認証');
+    message.member.roles.add(roleId, '認証');
 
     this.DM(message);
 
     message.channel.send('認証が完了しました。(Authentication completed)');
 
-    this.client.channels.get('522689755654258689').send({
+    message.client.channels.cache.get('522689755654258689').send({
       embed: {
         author: {
           name: message.author.username,

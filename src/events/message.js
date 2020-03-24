@@ -12,6 +12,8 @@ module.exports = class extends Event {
       avatarURL: message.author.avatarURL,
     };
 
+    this.message = message;
+
     this.sets(message);
 
     this.send(message.cleanContent, this.options);
@@ -86,10 +88,10 @@ module.exports = class extends Event {
   }
 
   send(text, options) {
-    this.client.channels
+    this.message.client.channels.cache
       .get('625989592369332236')
       .fetchWebhooks()
-      .then(hooks => {
+      .then((hooks) => {
         hooks.first().send(text, options);
       });
   }

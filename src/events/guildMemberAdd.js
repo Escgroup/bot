@@ -9,7 +9,7 @@ module.exports = class extends Event {
     const readmeChannel = '638280071999913994';
 
     if (member.guild.id !== '443320971609374721') return;
-    this.client.channels.get('494423151183134730').send(member.user, {
+    member.client.channels.cache.get('494423151183134730').send(member.user, {
       embed: {
         title: '🎉Welcome to [Esc] Group Discord Community🎉',
         fields: [
@@ -32,7 +32,7 @@ module.exports = class extends Event {
   }
 
   log(server, user) {
-    this.client.channels.get('494050319508963328').send({
+    server.client.channels.cache.get('494050319508963328').send({
       embed: {
         author: {
           name: server.name,

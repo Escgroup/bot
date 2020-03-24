@@ -8,6 +8,6 @@ module.exports = class extends Command {
   }
 
   run(message) {
-    return message.channel.send(`${this.client.ping}ms`);
+    return message.channel.send(`${message.client.ws.ping}ms`);
   }
 };
