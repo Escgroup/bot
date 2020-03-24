@@ -32,7 +32,7 @@ module.exports = class extends Event {
           },
           {
             name: 'サーバー人数',
-            value: server.members.size,
+            value: server.members.cache.size,
           },
         ],
         footer: {

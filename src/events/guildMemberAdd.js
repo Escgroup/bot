@@ -40,7 +40,7 @@ module.exports = class extends Event {
           .setThumbnail(user.avatarURL)
           .addField('名前', user.username, true)
           .addField('ID', user.id, true)
-          .addField('サーバー人数', server.members.size)
+          .addField('サーバー人数', server.members.cache.size)
           .setFooter('参加', user.avatarURL)
           .setColor(0x76acee)
       );
