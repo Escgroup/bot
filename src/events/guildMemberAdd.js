@@ -1,4 +1,5 @@
 const { Event } = require('ecstar');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Event {
   constructor(client) {
@@ -9,60 +10,39 @@ module.exports = class extends Event {
     const readmeChannel = '638280071999913994';
 
     if (member.guild.id !== '443320971609374721') return;
-    member.client.channels.cache.get('494423151183134730').send(member.user, {
-      embed: {
-        title: '🎉Welcome to [Esc] Group Discord Community🎉',
-        fields: [
-          {
-            name: '日本語',
-            value: `ようこそ \`${member.user.username}\` ✨
+
+    member.client.channels.cache.get('494423151183134730').send(
+      member.user,
+      new MessageEmbed()
+        .setTitle('🎉Welcome to [Esc] Group Discord Community🎉')
+        .addField(
+          '日本語',
+          `ようこそ \`${member.user.username}\` ✨
                         このサーバーでは荒し対策の為認証を行っています
-                        <#${readmeChannel}> の内容をよく読み同意できる場合\`,agree\`と入力してください`,
-          },
-          {
-            name: 'English',
-            value: `Nice to see you \`${member.user.username}\` ✨
+                        <#${readmeChannel}> の内容をよく読み同意できる場合\`,agree\`と入力してください`
+        )
+        .addField(
+          'English',
+          `Nice to see you \`${member.user.username}\` ✨
                         This server is authenticating for troll countermeasures
-                        If you can read and agree to <#${readmeChannel}> enter \`,agree\``,
-          },
-        ],
-      },
-    });
+                        If you can read and agree to <#${readmeChannel}> enter \`,agree\``
+        )
+    );
     this.log(member.guild, member.user);
   }
 
   log(server, user) {
-    server.client.channels.cache.get('494050319508963328').send({
-      embed: {
-        author: {
-          name: server.name,
-          icon_url: server.iconURL,
-        },
-        thumbnail: {
-          url: user.avatarURL,
-        },
-        fields: [
-          {
-            name: '名前',
-            value: user.username,
-            inline: true,
-          },
-          {
-            name: 'ID',
-            value: user.id,
-            inline: true,
-          },
-          {
-            name: 'サーバー人数',
-            value: server.members.size,
-          },
-        ],
-        footer: {
-          icon_url: user.avatarURL,
-          text: '参加',
-        },
-        color: 0x76acee,
-      },
-    });
+    server.client.channels.cache
+      .get('494050319508963328')
+      .send(
+        new MessageEmbed()
+          .setAuthor(server.name, server.iconURL)
+          .setThumbnail(user.avatarURL)
+          .addField('名前', user.username, true)
+          .addField('ID', user.id, true)
+          .addField('サーバー人数', server.members.size)
+          .setFooter('参加', user.avatarURL)
+          .setColor(0x76acee)
+      );
   }
 };
