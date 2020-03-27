@@ -9,7 +9,7 @@ module.exports = class extends Event {
     if (message.author.bot) return;
     this.options = {
       username: message.author.tag,
-      avatarURL: message.author.avatarURL,
+      avatarURL: message.author.avatarURL(),
     };
 
     this.message = message;

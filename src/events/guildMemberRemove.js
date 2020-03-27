@@ -17,7 +17,7 @@ module.exports = class extends Event {
           icon_url: server.iconURL,
         },
         thumbnail: {
-          url: user.avatarURL,
+          url: user.avatarURL(),
         },
         fields: [
           {
@@ -36,7 +36,7 @@ module.exports = class extends Event {
           },
         ],
         footer: {
-          icon_url: user.avatarURL,
+          icon_url: user.avatarURL(),
           text: '退出',
         },
         color: 0xd0021b,

@@ -27,7 +27,7 @@ module.exports = class extends Command {
       embed: {
         author: {
           name: message.author.username,
-          icon_url: message.author.avatarURL,
+          icon_url: message.author.avatarURL(),
         },
         description: `${message.author.username}さんが参加したよ 🙂
                 ${message.author.username} joined 🙂`,

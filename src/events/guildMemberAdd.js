@@ -37,11 +37,11 @@ module.exports = class extends Event {
       .send(
         new MessageEmbed()
           .setAuthor(server.name, server.iconURL)
-          .setThumbnail(user.avatarURL)
+          .setThumbnail(user.avatarURL())
           .addField('名前', user.username, true)
           .addField('ID', user.id, true)
           .addField('サーバー人数', server.members.cache.size)
-          .setFooter('参加', user.avatarURL)
+          .setFooter('参加', user.avatarURL())
           .setColor(0x76acee)
       );
   }
