@@ -265,10 +265,10 @@ delayed-stream@~1.0.0:
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
 
-discord.js@12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.0.2.tgz#c4d68f1363d7fc05ed71a42dba6b930966ed8602"
-  integrity sha512-iZiEA4Y61gqq/EjFfLXnkRK9pLapnax/vTVDUhs/mAhyqozAy0GOlk/MZI9rSa1iIoKTWRq6P9CRKhLNT2wUnA==
+discord.js@12.1.1:
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.1.1.tgz#440043ab5a09d66311e8b975acd31bea4f8ed227"
+  integrity sha512-Y6+QfAUZkb9cy27cfNqUigAgYVSKTw9jPF3mN4UDMih3Em3VQ0WjGBdX1UbE8CwFkLOu5XWQSNPdsoStTR8c2Q==
   dependencies:
     "@discordjs/collection" "^0.1.5"
     abort-controller "^3.0.0"
@@ -286,15 +286,16 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-ecstar@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-3.2.1.tgz#ea5c7bf81a413a9b762627c093e7e9bb0b064d80"
-  integrity sha512-OG/zy7rzF9VEkcWsmTkq6yrFAnJiRB+87vhxEsd+xtdiOE896nk8NsgiAtWh27f/Ld2cnDcfLy4+8C05VvCznw==
+ecstar@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-3.2.3.tgz#ebac3ad8c4a0d115471e87b28ca46c1bb1722af6"
+  integrity sha512-yFDdcB6qg752tyrp26I4jkeXus1aFOHRUq9aUmEgJVMDoFMXFlh/kuy2Shaznp6igb1WSIcd8cZ2RWtwXsvx0Q==
   dependencies:
     chalk "^3.0.0"
     chokidar "^3.3.1"
-    discord.js "12.0.2"
+    discord.js "12.1.1"
     figures "^3.1.0"
+    split-string "^6.1.0"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -950,6 +951,11 @@ slice-ansi@^2.1.0:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
+
+split-string@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/split-string/-/split-string-6.1.0.tgz#e9cedcf94cdab077d9b5528927894dec4b0f42ab"
+  integrity sha512-9UBdnmnvx2NLLd4bMs7CEKK+wSzbujVv3ONyorkP1o8M3pVJQtXDO1cN19xD1JJs6ltOrtPrkUND0HzLSinUcA==
 
 sprintf-js@~1.0.2:
   version "1.0.3"
