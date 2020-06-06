@@ -1,5 +1,9 @@
-"use strict";
-
 module.exports = {
-    extends: ["mouse", "mouse/node", "mouse/prettier"],
+  extends: [
+    'mouse',
+    'mouse/node',
+    'mouse/typescript',
+    'mouse/prettier',
+    'mouse/typescript-prettier',
+  ]
 };
