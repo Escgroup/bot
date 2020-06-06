@@ -5,6 +5,7 @@ const client = new Client({
   config: {
     channel: {
       main: '522689755654258689',
+      message_log: '625989592369332236',
     },
     roleId: '483849517071073284',
   },
