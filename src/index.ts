@@ -1,7 +1,7 @@
 import { Client } from 'ecstar';
 
 const client = new Client({
-  prefix: ',,',
+  prefix: ',',
   config: {
     channel: {
       main: '522689755654258689',
