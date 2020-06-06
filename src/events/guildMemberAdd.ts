@@ -1,6 +1,5 @@
 import { Event, Client } from 'ecstar';
 import { GuildMember, MessageEmbed, TextChannel } from 'discord.js';
-import { throws } from 'assert';
 
 export = class extends Event {
   constructor(client: Client) {
@@ -15,7 +14,7 @@ export = class extends Event {
     ) as TextChannel;
 
     const memberlogChannel = this.client.channels.cache.get(
-      this.client.config?.channel.member_log
+      this.client.config?.channel.memberLog
     ) as TextChannel;
 
     welcomeChannel.send(

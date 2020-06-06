@@ -47,7 +47,7 @@ export = class extends Event {
   }
   async sendLogChannel(text: string, options: WebhookOptions) {
     const logChannel = this.client.channels.cache.get(
-      this.client.config?.channel.message_log
+      this.client.config?.channel.messageLog
     ) as TextChannel;
 
     const webhook = (await logChannel.fetchWebhooks()).first();
