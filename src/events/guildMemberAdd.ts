@@ -35,10 +35,10 @@ export = class extends Event {
       new MessageEmbed()
         .setAuthor(member.displayName, member.guild.iconURL() || '')
         .setThumbnail(member.user.avatarURL() || '')
-        .addField('名前', member.user.username, true)
+        .addField('Name', member.user.username, true)
         .addField('ID', member.user.id, true)
-        .addField('サーバー人数', member.guild?.members.cache.size)
-        .setFooter('参加', member.user.avatarURL() || '')
+        .addField('Member Count', member.guild?.members.cache.size)
+        .setFooter('参加/Join', member.user.avatarURL() || '')
         .setColor(0x76acee)
     );
   }
