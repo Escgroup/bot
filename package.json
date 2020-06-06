@@ -16,17 +16,20 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^14.0.11",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-mouse": "mouse484/eslint-config",
-    "prettier": "^2.0.5",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
     "nodemon": "^2.0.4",
-    "typescript": "^3.9.5",
-    "@types/node": "^14.0.11",
+    "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "dotenv": "^8.2.0"
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "ecstar": "^3.3.0"
   }
 }
