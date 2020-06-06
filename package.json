@@ -32,5 +32,8 @@
   },
   "dependencies": {
     "ecstar": "^3.3.0"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
