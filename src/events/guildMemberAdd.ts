@@ -27,7 +27,7 @@ export = class extends Event {
         )
         .addField(
           'English',
-          `Welcome \`${member.user.username}\` ✨\nThis server is authenticating for troll countermeasures\nIf you can read and agree to <#${this.client.config?.channel.readm}> enter \`,agree\``
+          `Welcome \`${member.user.username}\` ✨\nThis server is authenticating for troll countermeasures\nIf you can read and agree to <#${this.client.config?.channel.readme}> enter \`,agree\``
         )
     );
 
