@@ -1,1 +1,1 @@
-worker: yarn run ts-node src/index
+worker: node dist/index
