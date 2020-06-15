@@ -1,1 +1,1 @@
-worker: yarn start
+worker: yarn run ts-node src/index
