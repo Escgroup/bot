@@ -24,7 +24,7 @@
     "eslint": "^6.8.0",
     "eslint-config-mouse": "mouse484/eslint-config",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.2.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
