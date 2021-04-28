@@ -3,7 +3,8 @@
   "description": "",
   "author": "mouse_484",
   "scripts": {
-    "dev": "ts-node --project tsconfig.json --ignore '/node_modules/!(ecstar)/' -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon --watch src --ext ts --exec 'yarn run ts-node src/index.ts'",
+    "ts-node": "ts-node --project tsconfig.json --ignore '/node_modules/!(ecstar)/' -r tsconfig-paths/register",
     "fix": "yarn fmt && yarn lint --fix",
     "fmt": "prettier --write .",
     "lint": "eslint src"
@@ -17,6 +18,7 @@
     "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
     "@types/node": "14.14.43",
     "eslint": "7.25.0",
+    "nodemon": "^2.0.7",
     "prettier": "2.2.1",
     "ts-node": "9.1.1",
     "tsconfig-paths": "^3.9.0",
