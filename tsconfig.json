@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
     "target": "es2019",
+    "strict": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "declarationDir": "dist/type",
     "module": "commonjs",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "strict": true,
-    "declaration": true,
-    "declarationDir": "dist/type"
+    "baseUrl": ".",
+    "paths": {
+      // Ecstar-nexr
+      "ecstar": ["node_modules/ecstar/src"],
+      "ecstar/*": [
+        "node_modules/ecstar/src/lib/*",
+        "node_modules/ecstar/src/lib/structures/*"
+      ]
+    }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts"]
 }
