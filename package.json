@@ -1,40 +1,24 @@
 {
-  "name": "esc-bot",
-  "version": "0.0.0",
+  "name": "bot",
   "description": "",
+  "author": "mouse_484",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts --exec ts-node --require dotenv/config src/index",
-    "lint": "eslint --ext ts .",
-    "fix": "eslint --ext ts --fix .",
-    "build": "tsc"
-  },
-  "lint-staged": {
-    "*.{js,ts}": "eslint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "devDependencies": {
-    "@types/node": "^14.0.23",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "dotenv": "^8.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-mouse": "mouse484/eslint-config",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "nodemon": "^2.0.4",
-    "prettier": "^2.0.5",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "dev": "ts-node src",
+    "fix": "yarn fmt && yarn lint --fix",
+    "fmt": "prettier --write .",
+    "lint": "eslint src"
   },
   "dependencies": {
-    "@types/ws": "^7.2.6",
-    "ecstar": "^3.3.0"
+    "ecstar": "Ecstar-js/Ecstar"
   },
-  "engines": {
-    "node": "12.x"
+  "devDependencies": {
+    "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.tk/Node?next",
+    "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.tk/Prettier?next",
+    "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
+    "@types/node": "14.14.43",
+    "eslint": "7.25.0",
+    "prettier": "2.2.1",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.4"
   }
 }

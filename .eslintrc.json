@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@mouse_484/eslint-config-node",
+    "@mouse_484/eslint-config-prettier",
+    "@mouse_484/eslint-config-typescript"
+  ]
+}
