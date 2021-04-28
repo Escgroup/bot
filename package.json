@@ -3,7 +3,7 @@
   "description": "",
   "author": "mouse_484",
   "scripts": {
-    "dev": "ts-node src",
+    "dev": "ts-node --project tsconfig.json --ignore '/node_modules/!(ecstar)/' -r tsconfig-paths/register src/index.ts",
     "fix": "yarn fmt && yarn lint --fix",
     "fmt": "prettier --write .",
     "lint": "eslint src"
@@ -19,6 +19,7 @@
     "eslint": "7.25.0",
     "prettier": "2.2.1",
     "ts-node": "9.1.1",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "4.2.4"
   }
 }
