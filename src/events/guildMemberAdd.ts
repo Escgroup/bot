@@ -1,13 +1,13 @@
 import { event } from 'ecstar';
 import { GuildMember, MessageEmbed, TextChannel } from 'discord.js';
 
-const memberlogChanneliD = '620149019896840192';
+import { memberlogChannelID } from '../config';
 
 export default event(() => ({
   name: 'guildMemberAdd',
   run({ client, callback: [member] }) {
     const memberlogChannel = client.channels.cache.get(
-      memberlogChanneliD
+      memberlogChannelID
     ) as TextChannel;
 
     if (member instanceof GuildMember) {

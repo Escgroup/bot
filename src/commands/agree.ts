@@ -1,6 +1,5 @@
 import { command } from 'ecstar';
-
-const roleID = '836888226760359996';
+import { roleID } from '../config';
 
 export default command(() => ({
   name: 'agree',

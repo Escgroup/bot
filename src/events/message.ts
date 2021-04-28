@@ -6,7 +6,7 @@ import {
   TextChannel,
 } from 'discord.js';
 
-const logChannelID = '620149019896840192';
+import { logChannelID } from '../config';
 
 export default event(() => ({
   name: 'message',
