@@ -10,9 +10,7 @@ import { logChannelID } from '../config';
 
 export default event(() => ({
   name: 'message',
-  async run({ client, callback: [message] }) {
-    if (!(message instanceof Message)) return;
-
+  async run({ client }, [message]) {
     if (message.author.bot) return;
 
     if (!message.guild) return;

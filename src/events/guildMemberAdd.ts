@@ -5,7 +5,7 @@ import { memberlogChannelID } from '../config';
 
 export default event(() => ({
   name: 'guildMemberAdd',
-  run({ client, callback: [member] }) {
+  run({ client }, [member]) {
     const memberlogChannel = client.channels.cache.get(
       memberlogChannelID
     ) as TextChannel;
