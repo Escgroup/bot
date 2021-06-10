@@ -10,7 +10,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "ecstar": "^4.2.1"
+    "ecstar": "^4.3.0"
   },
   "devDependencies": {
     "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.tk/Node?next",

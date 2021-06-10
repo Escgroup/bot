@@ -568,10 +568,10 @@ duplexer3@^0.1.4:
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-ecstar@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-4.2.1.tgz#d7ec636c6e307c895b3ed23cfaf3460373b28e13"
-  integrity sha512-X4nz5nUkX8sfVER2/5/gVOxL1xpFrPbItv6u1DWRLiXnquDhIJz0c1HTWCrG+lum+PsPi8my0p5f874lOwPonQ==
+ecstar@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-4.3.0.tgz#7ecec3ff430aed5ece4ea89b35bd8fbaaf3e78f4"
+  integrity sha512-wf6B6ydPvN4HMUc/9iLmGb+IJQyNDGwUyqml+Cf1JKj2BiQQeZ44PLd9STL+X2n6odJ0ExctBnuPfbpJtqbhfg==
   dependencies:
     chokidar "^3.4.3"
     consola "^2.15.3"
