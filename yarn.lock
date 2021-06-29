@@ -568,14 +568,15 @@ duplexer3@^0.1.4:
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-ecstar@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-4.2.1.tgz#d7ec636c6e307c895b3ed23cfaf3460373b28e13"
-  integrity sha512-X4nz5nUkX8sfVER2/5/gVOxL1xpFrPbItv6u1DWRLiXnquDhIJz0c1HTWCrG+lum+PsPi8my0p5f874lOwPonQ==
+ecstar@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/ecstar/-/ecstar-4.4.0.tgz#57d82a27e74a41685d2f00ba7301ad8caf1ed577"
+  integrity sha512-k3tV43luKj7sYa+rBI8FOGq3XHy1mM4p/6yex3OJHVlMHrYqxeEubwy0wvIHoa+aEfBZY0RT8Q6ofexJCht/Ag==
   dependencies:
     chokidar "^3.4.3"
     consola "^2.15.3"
     discord.js "^12.4.1"
+    parsimmon "^1.18.0"
     split-string "^6.1.0"
     typedoc "^0.20.36"
 
@@ -1358,6 +1359,11 @@ parent-module@^1.0.0:
   integrity sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==
   dependencies:
     callsites "^3.0.0"
+
+parsimmon@^1.18.0:
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/parsimmon/-/parsimmon-1.18.0.tgz#21db143f6e6386237394caf7ee94722879c54b5f"
+  integrity sha512-EtVsGuQfDgwGgXzsSDe+5egRPwbcgKRd/omQ1L3Oj2pHy0gYqd+Q7zrBIQ7P/BN6DWUP9vV45HIgZHCmssdzMg==
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
