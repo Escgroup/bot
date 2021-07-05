@@ -17,7 +17,7 @@
     "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.tk/Prettier?next",
     "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
     "@types/node": "14.14.43",
-    "eslint": "7.25.0",
+    "eslint": "7.30.0",
     "nodemon": "^2.0.7",
     "prettier": "2.2.1",
     "ts-node": "9.1.1",
