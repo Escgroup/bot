@@ -13,9 +13,9 @@
     "ecstar": "^4.2.1"
   },
   "devDependencies": {
-    "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.tk/Node?next",
-    "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.tk/Prettier?next",
-    "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.tk/TypeScript?next",
+    "@mouse_484/eslint-config-node": "https://eslint-config.mouse484.vercel.app/Node",
+    "@mouse_484/eslint-config-prettier": "https://eslint-config.mouse484.vercel.app/Prettier",
+    "@mouse_484/eslint-config-typescript": "https://eslint-config.mouse484.vercel.app/TypeScript",
     "@types/node": "14.14.43",
     "eslint": "7.25.0",
     "nodemon": "^2.0.7",
