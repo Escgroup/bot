@@ -1,8 +1,8 @@
+
 tasks:
   - command: yarn install
 
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint@1.9.1:YVcwmzKVVl+zZ+wMB02GjQ==
-    - esbenp.prettier-vscode@1.9.0:2CbWfKbh7qXJy3Ad4n/XgA==
-
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
